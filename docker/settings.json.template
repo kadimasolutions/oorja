@@ -1,0 +1,70 @@
+{
+  "public": {
+    "screenShareExtensionId": "cbihbpgofmdfhnjbkkhbmmnpmofggacd",
+    "defaultMaxVideoBW": 300,
+    "defaultMaxAudioBW": 300,
+    "refreshOnWake": false,
+    "cdnURL": "https://d21e9wyielwbyq.cloudfront.net",
+    "beamConfig": {
+      {{if eq .Env.SECURE_BEAM "true"}}
+        "socketProtocolPrefix": "wss://",
+        "httpProtocolPrefix": "https://",
+      {{else}}
+        "socketProtocolPrefix": "ws://",
+        "httpProtocolPrefix": "http://",
+      {{end}}
+      "host": "{{.Env.BEAM_HOST}}"
+    }
+  },
+  "private": {
+
+    "roomConfig": {
+      "defaultComms": "video"
+    },
+
+    "JWTsecret": "{{.Env.JWT_SECRET}}",
+    "JWTalgo": "HS512",
+
+    "saltRounds": 11,
+    "enableBugsnag": false,
+    "bugsnagKey": "test",
+
+    "Nuve": {
+      "serviceName": "ss1",
+      "serviceId": "${{.Env.NUVE_SERVICE_ID}}",
+      "serviceKey": "${{.Env.NUVE_SERVICE_KEY}}",
+      "host": "http://${{.Env.NUVE_HOST}}/"
+    },
+
+    "privateAPISecret": "{{.Env.PRIVATE_API_SECRET}}",
+
+    "github": {
+      "clientId": "id",
+      "secret": "secret"
+    },
+
+    "google": {
+      "clientId": "id",
+      "secret": "secret"
+    },
+
+    "twitter": {
+      "consumerKey": "key",
+      "secret": "secret"
+    },
+    "linkedin": {
+      "clientId": "id",
+      "secret": "secret"
+    },
+
+    "twitch": {
+      "clientId": "g0w0x392m38vdchqre3edm88dcrutx",
+      "secret": "r0rya7zcaufptmwe4rq51c5tp0mdv9"
+    },
+
+    "weibo": {
+      "clientId": "",
+      "secret": ""
+    }
+  }
+}
