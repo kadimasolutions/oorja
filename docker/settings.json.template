@@ -4,7 +4,7 @@
     "defaultMaxVideoBW": 300,
     "defaultMaxAudioBW": 300,
     "refreshOnWake": false,
-    "cdnURL": "https://d21e9wyielwbyq.cloudfront.net",
+    "cdnURL": "{{.Env.ROOT_URL}}",
     "beamConfig": {
       {{if eq .Env.SECURE_BEAM "true"}}
         "socketProtocolPrefix": "wss://",
@@ -53,6 +53,16 @@
       "secret": "secret"
     },
     "linkedin": {
+      "clientId": "id",
+      "secret": "secret"
+    },
+
+    "facebook": {
+      "clientId": "id",
+      "secret": "secret"
+    },
+
+    "reddit": {
       "clientId": "id",
       "secret": "secret"
     },
